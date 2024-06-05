@@ -1,5 +1,10 @@
 :root{
-
+--Softorange: hsl(35, 77%, 62%);
+--Softred: hsl(5, 85%, 63%);
+--Off-white: hsl(36, 100%, 99%);
+--Grayishblue: hsl(233, 8%, 79%);
+--Darkgrayishblue: hsl(236, 13%, 42%);
+--Verydarkblue: hsl(240, 100%, 5%);
 }
 
 body{
@@ -8,9 +13,300 @@ body{
 
 /* designing for mobile first this time! */
 
-@media only screen and (max-width:426px){
+
     html,body{
-        overflow-y: hidden;
+        max-width: 100%;
+        margin:0.5em;
+    }
+
+    /* header stuffs */
+    
+    .header-container{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom:1.5em;
+    }
+    .burger{
+        height:3vh;
+        width:15vw;
+        z-index: 1;
     }
     
+    .header{
+        display:flex;
+        justify-content: left;
+        flex-direction: column;
+        align-items:baseline;
+        min-height:100vh;
+        width:60vw;
+        background-color: var(--Off-white);
+        position: fixed;
+        gap:2em;
+        padding-top: 10em;
+        padding-left:1em;
+        right:0%;
+        top:0%;
+        display:none;
+    }
+
+    a{
+        text-decoration: none;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings:
+          "slnt" 0;
+    }
+
+    a:visited{
+        color:var(--Verydarkblue);
+    }
+
+    /* the big container */
+
+    .image{
+        max-width: 100%;
+    }
+
+    .main-article-title{
+        font-size:1.7rem;
+        margin:-0.8em 0;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        font-variation-settings:
+          "slnt" 0;
+          line-height: 1.5em;
+    }
+
+    .main-article-text{
+        line-height: 1.5rem;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings:
+          "slnt" 0; 
+        color:var(--Darkgrayishblue);
+        margin-bottom:1.5em;
+    }
+
+    .main-article-button{
+        border:0;
+        background-color: var(--Softred);
+        padding:1em 2em;
+        letter-spacing:3px;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        font-variation-settings:
+          "slnt" 0; 
+    }
+
+    .main-article-button:hover{
+        cursor: pointer;
+        background-color: var(--Verydarkblue);
+        color:var(--Off-white);
+    }
+
+    /* New articles */
+
+    .article-container{
+        background-color:var(--Verydarkblue);
+        padding: 1em 1em;
+        margin:3em 0;
+    }
+
+    .newsign{
+        color:var(--Softorange);
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        font-variation-settings:
+          "slnt" 0; 
+        font-size:2rem;
+        margin-bottom:1em;
+        margin-top:0.2em;
+    }
+
+    .article{
+        color:var(--Off-white);
+    }
+
+    .article>h3{
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+        font-variation-settings:
+          "slnt" 0; 
+    }
+
+    .article>h3:hover{
+        cursor: pointer;
+        color:var(--Softorange);
+    }
+
+    .article>p{
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings:
+          "slnt" 0; 
+        color:var(--Grayishblue);
+    }
+
+    .article:not(:last-child){
+        border-bottom:1px solid var(--Darkgrayishblue);
+        padding-bottom:1em;
+    }
+
+    /* other questions/curiosities */
+
+    .curiosity-container{
+        display:flex;
+        flex-direction: column;
+        gap: 2.5em;
+        margin:4em 0;
+    }
+
+    .curiosity{
+        display:flex;
+        gap:1em;
+    }
+
+    .curiosity>img{
+        max-width:40vw;
+    }
+
+    .curiosity-text{
+        font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+    }
+
+    .curiosity-text>h3{
+      color:var(--Softred);
+      font-size:2rem;
+      font-weight: 800;
+      margin:-0.2em 0;
+    }
+
+    .curiosity-text>h4{
+        font-weight:800;
+        margin-bottom:-0.1em;
+    }
+
+    .curiosity-text>h4:hover{
+        cursor: pointer;
+        color:var(--Softred);
+    }
+
+    .curiosity-text>p{
+        font-weight: 400;
+    }
+
+
+    /* 1440 screen time*/
+
+@media only screen and (min-width:426px){
+    html{
+        margin:0;
+    }
+
+    body{
+        max-width:80vw;
+        margin:auto;
+        margin-top:2em;
+        margin-bottom:1em;
+    }
+
+    .burger{
+        display:none;
+    }
+
+    .header-container{
+        margin-bottom:3em;
+    }
+
+    .header{
+        display:flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width:28vw;
+        color:var(--Darkgrayishblue);
+    }
+
+    .header>a{
+        text-decoration: none;
+    }
+
+    .header>a:visited{
+        color:var(--Darkgrayishblue);
+    }
+
+    /* main container of the page */
+
+    .main-container{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1em;
+        column-width: 2rem;
+        
+    }
+
+    picture{
+     grid-column:1 / 3;
+     max-height:31vh;
+    }
+
+    .image{
+        max-height:100vh;
+        width:100vw;
+        max-height:31vh;
+    }
+
+    .main-article-title{
+     grid-row: 2 / 2;
+     font-size:2rem;
+     width:21vw;
+    }
+
+    .main-article-text{
+        grid-row: 2/3;
+        font-size:1.1rem;
+    }
+
+    .article-container{
+        margin:0;
+        grid-column: 3/4;
+        grid-row: 1/3;
+        margin-bottom:3em;
+    }
+
+    .curiosity-container{
+        display:flex;
+        flex-direction: row;
+        grid-row:3/3;
+        grid-column:1/4;
+        margin:0;
+    }
+
+    .curiosity>img{
+        max-height:15vh;
+    }
+
+    @media only screen and (min-width:767px) {
+        .header{
+            gap:0.5em;
+        }
+    }
 }
