@@ -32,7 +32,23 @@ body{
         width:15vw;
         z-index: 1;
     }
-    
+
+    a{
+        text-decoration: none;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings:
+          "slnt" 0;
+    }
+
+    a:visited{
+        color:var(--Verydarkblue);
+    }
+
+    /* quick link fix for mobile burger menu */
+@media only screen and (max-width:425px){
     .header{
         display:flex;
         justify-content: left;
@@ -49,20 +65,7 @@ body{
         top:0%;
         display:none;
     }
-
-    a{
-        text-decoration: none;
-        font-family: "Inter", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-        font-variation-settings:
-          "slnt" 0;
-    }
-
-    a:visited{
-        color:var(--Verydarkblue);
-    }
+}
 
     /* the big container */
 
@@ -251,6 +254,10 @@ body{
 
     .header>a:visited{
         color:var(--Darkgrayishblue);
+    }
+
+    .header>a:hover{
+        color:var(--Softorange);
     }
 
     /* main container of the page */
